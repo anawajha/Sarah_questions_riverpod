@@ -1,0 +1,21 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:sarahah_questions/app/services/notification/notification_manger.dart';
+import 'package:sarahah_questions/data/core/dio_manger.dart';
+import 'package:sarahah_questions/presentation/views/app_widget.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'app/services/storage/local_storage.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initServices();
+  await Firebase.initializeApp();
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  DioManager.getInstance.init();
+  NotificationManager.instance.init();
+  runApp(const AppWidget());
+}
+
+initServices() async {
+  await Get.putAsync(() async => await LocalStorageService().init());
+}
