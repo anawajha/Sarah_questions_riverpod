@@ -8,8 +8,6 @@ import 'package:sarahah_questions/app/utils/app_utils.dart';
 import 'package:sarahah_questions/app/utils/my_get_utils.dart';
 import 'package:sarahah_questions/data/providers/api/profile_api.dart';
 import 'package:sarahah_questions/domain/entities/user.dart';
-import 'package:sarahah_questions/presentation/controllers/home/home_controller.dart';
-import 'package:sarahah_questions/presentation/controllers/home/home_placeholder_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/main_controller.dart';
 
 class ProfileController extends MainController {
@@ -76,8 +74,6 @@ class ProfileController extends MainController {
           MyGetUtils().findService(LocalStorageService()).userData = r;
           _refreshProfileData();
           Get.back();
-          HomePlaceholderController.to.update();
-          HomeController.to.update();
         });
       });
     }

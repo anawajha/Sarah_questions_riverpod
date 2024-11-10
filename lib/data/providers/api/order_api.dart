@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:sarahah_questions/data/core/api_endpoint.dart';
 import 'package:sarahah_questions/data/core/dio_manger.dart';
 import 'package:sarahah_questions/data/enums/header_types.dart';
@@ -13,14 +12,12 @@ class OrderAPI extends OrderRepository {
   factory OrderAPI() => _orderAPI;
   
   @override
-  Future<Either<AppResponse, order.Order>> acceptOrder({required int? orderId, required LatLng latLng}) async {
+  Future<Either<AppResponse, order.Order>> acceptOrder({required int? orderId}) async {
         final res = await DioManager.getInstance.postForm(
       url: acceptOrderEndPoint,
        header: HeaderTypes.basicWithAuthorization.header,
       body: {
         'order_id': orderId,
-        'driver_lat' : latLng.latitude,
-        'driver_long' : latLng.longitude
       });
 
      AppResponse appResponse = AppResponse.fromJson(res.data);

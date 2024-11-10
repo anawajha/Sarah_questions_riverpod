@@ -13,20 +13,12 @@ enum _Key {
   language,
   userData,
   token,
-  // playerId,
   fcmToken,
   rememberMe,
 }
 
 class LocalStorageService extends GetxService {
   SharedPreferences? _sharedPreferences;
-
-  // String get playerId =>
-  //     _sharedPreferences?.getString(_Key.playerId.toString()) ?? '';
-
-  // set playerId(String playerId) {
-  //   _sharedPreferences?.setString(_Key.playerId.toString(), playerId);
-  // }
 
   set rememberMe(bool rememberMe) {
     _sharedPreferences?.setBool(_Key.rememberMe.toString(), rememberMe);

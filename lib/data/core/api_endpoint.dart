@@ -1,5 +1,3 @@
-library api_endpoint;
-
 import '../../app/config/app_config.dart';
 
 

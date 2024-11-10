@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:logger/logger.dart';
 import 'package:sarahah_questions/data/core/api_endpoint.dart';
 import 'package:sarahah_questions/data/core/dio_manger.dart';
@@ -29,15 +28,12 @@ class HomeAPI extends HomeRepository {
     }
   }
 
-  @override
-  Future<Either<AppResponse, order.Order>> updateOrderStatus(int orderId, OrderStatus status, LatLng position) async {
+  Future<Either<AppResponse, order.Order>> updateOrderStatus(int orderId, OrderStatus status) async {
     final res = await DioManager.getInstance.put(
       url: updateTripStatusEndPoint,
       body: {
         'order_id' : orderId,
         'status' : status.name,
-        'driver_lat' : position.latitude,
-        'driver_long' : position.longitude
       },
       header: HeaderTypes.acceptUrlencoded.header);
 

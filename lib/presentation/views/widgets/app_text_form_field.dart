@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 
 class AppTextFormField extends StatelessWidget {
   const AppTextFormField(
-      {Key? key,
+      {super.key,
       required this.controller,
       this.obscureText = false,
       this.maxLines = 1,
@@ -22,8 +22,7 @@ class AppTextFormField extends StatelessWidget {
       this.prefixIconColor,
       this.fillColor,
       this.radius,
-      this.textStyle, this.suffixIconColor, this.filled, this.onChanged})
-      : super(key: key);
+      this.textStyle, this.suffixIconColor, this.filled, this.onChanged});
 
   final TextEditingController controller;
   final bool obscureText;

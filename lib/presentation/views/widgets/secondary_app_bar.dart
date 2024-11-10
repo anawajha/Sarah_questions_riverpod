@@ -19,7 +19,7 @@ class SecondaryAppBar extends StatelessWidget implements PreferredSizeWidget {
         leading: Navigator.of(context).canPop()
             ? IconButton(
                 onPressed: () => Get.back(),
-                color: Theme.of(context).colorScheme.onBackground,
+                color: Theme.of(context).colorScheme.onSurface,
                 icon: Transform.flip(
                     flipX: Directionality.of(context) == TextDirection.rtl,
                     child: const Icon(Iconsax.arrow_square_left))) : null,

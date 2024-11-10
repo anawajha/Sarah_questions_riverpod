@@ -1,4 +1,3 @@
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:logger/logger.dart';
 import 'package:sarahah_questions/app/extensions/string.dart';
 import 'package:sarahah_questions/data/models/enum/order_status.dart';
@@ -6,8 +5,6 @@ import 'package:sarahah_questions/data/models/enum/order_status.dart';
 class Order {
   int? id;
   int? userId;
-  LatLng? startPosition;
-  LatLng? destinationPosition;
   String? address;
   String? targetAddress;
   String? riderName;
@@ -22,8 +19,6 @@ class Order {
     Order({
        required this.id,
        required this.userId,
-       required this.startPosition,
-       required this.destinationPosition,
        required this.address,
        required this.targetAddress,
        required this.accepted,
@@ -42,8 +37,6 @@ class Order {
       return Order(
         id: json["id"],
         userId: json["user_id"],
-        startPosition: (json["lat_start"] != null && json["long_start"] != null ) ? LatLng(json["lat_start"], json["long_start"]) : null,
-        destinationPosition: (json["lat_end"] != null && json["long_end"] != null) ? LatLng(json["lat_end"], json["long_end"]) : null,
         address: json["user_address"],
         targetAddress: json ["target_address"],
         accepted: json["is_accepted"],
@@ -60,10 +53,6 @@ class Order {
     Map<String, dynamic> toJson() => {
         "id": id,
         "model": userId,
-        "lat_start": startPosition?.latitude,
-        "long_start": startPosition?.longitude,
-        "lat_end": startPosition?.latitude,
-        "long_end": startPosition?.longitude,
         'user_address' : address,
         'target_address' : targetAddress,
         'is_accepted' : accepted,

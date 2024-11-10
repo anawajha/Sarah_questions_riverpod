@@ -4,19 +4,12 @@ import 'package:sarahah_questions/presentation/controllers/auth/login_controller
 import 'package:sarahah_questions/presentation/controllers/auth/register_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/general/help_center_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/home/home_controller.dart';
-import 'package:sarahah_questions/presentation/controllers/home/home_placeholder_controller.dart';
-import 'package:sarahah_questions/presentation/controllers/home/orders_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/profile/car_profile_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/profile/profile_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/settings/change_password_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/settings/settings_controller.dart';
 
-class HomePlaceHolderBinding implements Bindings {
-  @override
-  void dependencies() {
-    Get.put(HomePlaceholderController(), permanent: true);
-  }
-}
+
 
 class HomeBinding implements Bindings {
   @override
@@ -32,12 +25,6 @@ class CarProfileBinding implements Bindings {
   }
 }
 
-class OrdersBinding implements Bindings {
-  @override
-  void dependencies() {
-    Get.put(OrdersController());
-  }
-}
 
 class ProfileBinding implements Bindings {
   @override

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "726964399882",
+    "project_id": "sarahahqusetions",
+    "storage_bucket": "sarahahqusetions.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726964399882:android:fbc52178cc1f84e8f294f3",
+        "android_client_info": {
+          "package_name": "com.anawajha.sarahah_questions"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS5f5bFvyFdzwSbB26-X4m4B03y01EyKI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

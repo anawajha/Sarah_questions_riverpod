@@ -4,7 +4,7 @@ import 'package:sarahah_questions/app/localization/trans_manager.dart';
 
 
 class ProgressDialog extends StatelessWidget {
-  const ProgressDialog({Key? key}) : super(key: key);
+  const ProgressDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
