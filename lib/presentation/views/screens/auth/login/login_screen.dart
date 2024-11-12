@@ -3,11 +3,9 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
 import 'package:sarahah_questions/app/localization/trans_manager.dart';
-import 'package:sarahah_questions/app/router/routes.dart';
 import 'package:sarahah_questions/app/utils/validator.dart';
 import 'package:sarahah_questions/presentation/controllers/auth/login_controller.dart';
 import 'package:sarahah_questions/presentation/views/screens/auth/widgets/auth_widgets_container.dart';
-import 'package:sarahah_questions/presentation/views/widgets/app_rich_text.dart';
 import 'package:sarahah_questions/presentation/views/widgets/labeled_text_form_field.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -60,43 +58,32 @@ class LoginScreen extends StatelessWidget {
                     obscureText: logic.visiblePassword,
                     validator: Validator.instance.emptyValidator,
                   ),
-                  20.spaceY,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TextButton(
-                          onPressed: () =>
-                              Get.toNamed(Routes.forgetPassword),
-                          child: Text(TransManager.forgotPassword.tr)),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(TransManager.rememberMe.tr),
-                          Transform.scale(
-                              scale: 0.5,
-                              child: Switch.adaptive(
-                                  value: logic.rememberMe,
-                                  onChanged: (v) =>
-                                      logic.changeRememberMeStatus()))
-                        ],
-                      )
-                    ],
-                  ),
+                  // 20.spaceY,
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     TextButton(
+                  //         onPressed: () =>
+                  //             Get.toNamed(Routes.forgetPassword),
+                  //         child: Text(TransManager.forgotPassword.tr)),
+                  //     Row(
+                  //       mainAxisSize: MainAxisSize.min,
+                  //       children: [
+                  //         Text(TransManager.rememberMe.tr),
+                  //         Transform.scale(
+                  //             scale: 0.5,
+                  //             child: Switch.adaptive(
+                  //                 value: logic.rememberMe,
+                  //                 onChanged: (v) =>
+                  //                     logic.changeRememberMeStatus()))
+                  //       ],
+                  //     )
+                  //   ],
+                  // ),
                   32.spaceY,
                   ElevatedButton(
                     onPressed: () => logic.login(),
                     child: Text(TransManager.login.tr),
-                  ),
-                  15.spaceY,
-                  AppRichText(
-                    first: TransManager.dontHaveRehlaAccount,
-                    last: TransManager.createNewAccount,
-                    onPressed: () {
-                      // MyGetUtils()
-                      //     .find(RegisterController())
-                      //     .cleanRegisterForm();
-                      Get.toNamed(Routes.register);
-                    },
                   )
                 ],
               ),

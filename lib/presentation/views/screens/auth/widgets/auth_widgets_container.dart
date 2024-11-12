@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:sarahah_questions/app/config/svg_manager.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
-import 'package:sarahah_questions/presentation/views/widgets/image_svg.dart';
 
 class AuthWidgetsContainer extends StatelessWidget {
   const AuthWidgetsContainer({
@@ -25,13 +22,13 @@ class AuthWidgetsContainer extends StatelessWidget {
         child: Stack(
           alignment: AlignmentDirectional.bottomCenter,
           children: [
-            Center(
-                child: ImageSvg(SvgManager().logo,
-                    color: Theme.of(context).colorScheme.onPrimary,
-                    width: 174.w,
-                    height: 68.w)),
-            SvgPicture.asset(SvgManager().authHeaderBackground,
-                width: double.infinity, height: 290.h, fit: BoxFit.cover)
+            // Center(
+            //     child: ImageSvg(SvgManager().logo,
+            //         color: Theme.of(context).colorScheme.onPrimary,
+            //         width: 174.w,
+            //         height: 68.w)),
+            // SvgPicture.asset(SvgManager().authHeaderBackground,
+            //     width: double.infinity, height: 290.h, fit: BoxFit.cover)
           ],
         ),
       ),

@@ -5,6 +5,12 @@ abstract class TransManager {
   static String privacyPolicy = "Privacy policy";
   static String rateUs = "rateUs";
   static String ourApps = "ourApps";
+  static String adminLogin = "adminLogin";
+  static String addNew = "addNew";
+  static String questionText = "questionText";
+  static String enterQuestionTextHere = "enterQuestionTextHere";
+  static String add = "add";
+  static String questions = "questions";
 
 
   static String thereIsNoOptionsFound = "There is no options found";

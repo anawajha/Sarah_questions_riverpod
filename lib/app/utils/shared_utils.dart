@@ -31,7 +31,7 @@ class SharedUtils {
         mode = AppTheme(mode: ThemeMode.dark, name: TransManager.darkMode);
         break;
       default:
-        mode = AppTheme(mode: ThemeMode.dark, name: TransManager.systemMode);
+        mode = AppTheme(mode: ThemeMode.system, name: TransManager.systemMode);
         break;
     }
     return mode;

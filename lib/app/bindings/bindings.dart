@@ -1,11 +1,10 @@
 import 'package:get/get.dart';
-import 'package:sarahah_questions/presentation/controllers/auth/forget_password_controller.dart';
+import 'package:sarahah_questions/presentation/controllers/admin/add_new_controller.dart';
+import 'package:sarahah_questions/presentation/controllers/admin/manage_questions_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/auth/login_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/general/help_center_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/home/home_controller.dart';
-import 'package:sarahah_questions/presentation/controllers/profile/car_profile_controller.dart';
-import 'package:sarahah_questions/presentation/controllers/profile/profile_controller.dart';
-import 'package:sarahah_questions/presentation/controllers/settings/change_password_controller.dart';
+import 'package:sarahah_questions/presentation/controllers/home/questions_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/settings/settings_controller.dart';
 
 
@@ -17,27 +16,6 @@ class HomeBinding implements Bindings {
   }
 }
 
-class CarProfileBinding implements Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut(()=> CarProfileController());
-  }
-}
-
-
-class ProfileBinding implements Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut(()=> ProfileController());
-  }
-}
-
-class ForgetPasswordBinding implements Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut(()=> ForgetPasswordController());
-  }
-}
 
 class LoginBinding implements Bindings {
   @override
@@ -61,9 +39,21 @@ class SettingsBinding implements Bindings {
   }
 }
 
-class ChangePasswordBinding implements Bindings {
+class AddNewBinding implements Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(()=> ChangePasswordController());
+    Get.lazyPut(()=> AddNewController());
+  }
+}
+class ManageQuestionsBinding implements Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut(()=> ManageQuestionsController());
+  }
+}
+class QuestionsBinding implements Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut(()=> QuestionsController());
   }
 }

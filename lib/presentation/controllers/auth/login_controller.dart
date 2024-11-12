@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:logger/logger.dart';
 import 'package:sarahah_questions/app/router/routes.dart';
 import 'package:sarahah_questions/app/services/storage/local_storage.dart';
-import 'package:sarahah_questions/app/utils/app_utils.dart';
 import 'package:sarahah_questions/app/utils/my_get_utils.dart';
-import 'package:sarahah_questions/data/providers/api/auth_api.dart';
 import 'package:sarahah_questions/presentation/controllers/main_controller.dart';
 
 class LoginController extends MainController {
@@ -33,30 +30,31 @@ class LoginController extends MainController {
 
   void login() async {
     if (formKey.currentState!.validate()) {
-      try {
-        showProgress();
-        final res = await AuthAPI().login(
-          email: tecUsername.text,
-          password: tecPassword.text,
-        );
-        hideProgress();
-        res.fold(
-          (l) {
-            AppUtils().snackError(body: l.message ?? '');
-          },
-          (r) {
-            if (rememberMe) {
-              localService.rememberMe = true;
-            }
-            localService.userData = r;
-            Get.offNamed(Routes.home);
-            cleanLogin();
-          },
-        );
-      } catch (e) {
-        hideProgress();
-        Logger().e(e.toString());
-      }
+      Get.offAllNamed(Routes.manageQuestions);
+      // try {
+      //   showProgress();
+      //   final res = await AuthAPI().login(
+      //     email: tecUsername.text,
+      //     password: tecPassword.text,
+      //   );
+      //   hideProgress();
+      //   res.fold(
+      //     (l) {
+      //       AppUtils().snackError(body: l.message ?? '');
+      //     },
+      //     (r) {
+      //       if (rememberMe) {
+      //         localService.rememberMe = true;
+      //       }
+      //       localService.userData = r;
+      //       Get.offNamed(Routes.home);
+      //       cleanLogin();
+      //     },
+      //   );
+      // } catch (e) {
+      //   hideProgress();
+      //   Logger().e(e.toString());
+      // }
     }
   }
 
