@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:sarahah_questions/presentation/controllers/auth/forget_password_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/auth/login_controller.dart';
-import 'package:sarahah_questions/presentation/controllers/auth/register_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/general/help_center_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/home/home_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/profile/car_profile_controller.dart';
@@ -47,12 +46,6 @@ class LoginBinding implements Bindings {
   }
 }
 
-class RegisterBinding implements Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut(()=> RegisterController());
-  }
-}
 
 class HelpCenterBinding implements Bindings {
   @override

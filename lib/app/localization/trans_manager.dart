@@ -1,4 +1,12 @@
 abstract class TransManager {
+
+  static String appName = "appName";
+  static String contactUs = "contactUs";
+  static String privacyPolicy = "Privacy policy";
+  static String rateUs = "rateUs";
+  static String ourApps = "ourApps";
+
+
   static String thereIsNoOptionsFound = "There is no options found";
   static String loading = "Loading...";
   static String login = "Login";

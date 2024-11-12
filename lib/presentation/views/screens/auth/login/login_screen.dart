@@ -4,10 +4,8 @@ import 'package:iconsax/iconsax.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
 import 'package:sarahah_questions/app/localization/trans_manager.dart';
 import 'package:sarahah_questions/app/router/routes.dart';
-import 'package:sarahah_questions/app/utils/my_get_utils.dart';
 import 'package:sarahah_questions/app/utils/validator.dart';
 import 'package:sarahah_questions/presentation/controllers/auth/login_controller.dart';
-import 'package:sarahah_questions/presentation/controllers/auth/register_controller.dart';
 import 'package:sarahah_questions/presentation/views/screens/auth/widgets/auth_widgets_container.dart';
 import 'package:sarahah_questions/presentation/views/widgets/app_rich_text.dart';
 import 'package:sarahah_questions/presentation/views/widgets/labeled_text_form_field.dart';
@@ -94,9 +92,9 @@ class LoginScreen extends StatelessWidget {
                     first: TransManager.dontHaveRehlaAccount,
                     last: TransManager.createNewAccount,
                     onPressed: () {
-                      MyGetUtils()
-                          .find(RegisterController())
-                          .cleanRegisterForm();
+                      // MyGetUtils()
+                      //     .find(RegisterController())
+                      //     .cleanRegisterForm();
                       Get.toNamed(Routes.register);
                     },
                   )
