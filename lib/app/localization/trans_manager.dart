@@ -24,6 +24,10 @@ abstract class TransManager {
   static String youMustEnterTheQuestion = "youMustEnterTheQuestion";
   static String categories = "categories";
   static String manageCategories = "manageCategories";
+  static String categoryDeletedSuccessfully = "categoryDeletedSuccessfully";
+  static String errorWhileDeletingCategory = "errorWhileDeletingCategory";
+  static String questionDeletedSuccessfully = "questionDeletedSuccessfully";
+  static String errorWhileDeletingQuestion = "errorWhileDeletingQuestion";
 
 
   static String thereIsNoOptionsFound = "There is no options found";

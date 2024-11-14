@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:sarahah_questions/app/services/storage/local_storage.dart';
 import 'package:sarahah_questions/app/utils/my_get_utils.dart';
@@ -7,6 +8,8 @@ class MainController extends GetxController {
   final LocalStorageService lss = MyGetUtils().findService(LocalStorageService());
   bool isLoading = false;
   bool progressLoading = false;
+
+  final firestore = FirebaseFirestore.instance;
 
   void startLoading() {
     isLoading = true;
@@ -32,5 +35,4 @@ class MainController extends GetxController {
     Get.close(1);
     update();
   }
-
 }

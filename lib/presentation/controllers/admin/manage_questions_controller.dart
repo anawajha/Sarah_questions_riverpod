@@ -1,8 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
+import 'package:sarahah_questions/app/config/constance.dart';
+import 'package:sarahah_questions/app/localization/trans_manager.dart';
+import 'package:sarahah_questions/app/utils/app_utils.dart';
+import 'package:sarahah_questions/presentation/controllers/main_controller.dart';
 
-class ManageQuestionsController extends GetxController {
+class ManageQuestionsController extends MainController {
   late ScrollController scrollController;
   bool isExtended = true;
 
@@ -27,6 +32,29 @@ class ManageQuestionsController extends GetxController {
         update();
       }
     }
+  }
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> getCategories() => firestore
+      .collection(Constants().questionsCollection)
+      .orderBy('created_at', descending: true)
+      .snapshots();
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> getCategoriesById(String id) =>
+      firestore
+          .collection(Constants().questionsCollection)
+          .where('category_id', isEqualTo: id)
+          .orderBy('created_at', descending: true)
+          .snapshots();
+
+  Future<void> deleteCategory(String quesId) async {
+    firestore
+        .collection(Constants().questionsCollection)
+        .doc(quesId)
+        .delete()
+        .then((o) => AppUtils()
+            .snackError(body: TransManager.questionDeletedSuccessfully.tr))
+        .catchError((e) => AppUtils()
+            .snackError(body: TransManager.errorWhileDeletingQuestion.tr));
   }
 
   @override

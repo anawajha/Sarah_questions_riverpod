@@ -9,14 +9,12 @@ import 'package:sarahah_questions/presentation/controllers/main_controller.dart'
 
 class AddNewCategoryController extends MainController {
 
-  final _firestore = FirebaseFirestore.instance;
-
     final formKey = GlobalKey<FormState>();
   final tecCategoryName = TextEditingController();
 
   Future<void> addNewQuestion () async {
     showProgress();
-     await _firestore.collection(Constants().categoriesCollection).add({
+     await firestore.collection(Constants().categoriesCollection).add({
             'name': tecCategoryName.text.trim(), 
             'author_id': FirebaseAuth.instance.currentUser?.uid,
             'created_at' : FieldValue.serverTimestamp()
