@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:sarahah_questions/app/config/constance.dart';
+import 'package:sarahah_questions/app/config/image_manager.dart';
 import 'package:sarahah_questions/presentation/views/widgets/loading_shimmer/shimmer.dart';
 import 'package:sarahah_questions/presentation/views/widgets/loading_shimmer/shimmer_loading.dart';
 
@@ -58,10 +59,9 @@ class AppImageNetwork extends StatelessWidget {
               child : CachedNetworkImage(
               imageUrl: Constants().urlUserPlaceholder,
               errorWidget: (context, url, error) {
-                return SizedBox(
+                return Image.asset(ImageManager().userPlaceholder,
                   height: height,
                   width: width,
-                  child: const Text("Error"),
                 );
               },
               fit: BoxFit.cover));

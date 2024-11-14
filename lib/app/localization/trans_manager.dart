@@ -11,6 +11,19 @@ abstract class TransManager {
   static String enterQuestionTextHere = "enterQuestionTextHere";
   static String add = "add";
   static String questions = "questions";
+  static String wrongEmailOrPassword = "wrongEmailOrPassword";
+  static String addNewCategory = "addNewCategory";
+  static String categoryName = "categoryName";
+  static String selectCategory = "selectCategory";
+  static String addNewQuestion = "addNewQuestion";
+  static String editProfile = "editProfile";
+  static String somethingWentWrong = "somethingWentWrong";
+  static String questionAddedSuccessfully = "questionAddedSuccessfully";
+  static String youMustSelectCategory = "youMustSelectCategory";
+  static String youMustEnterCategoryName = "youMustEnterCategoryName";
+  static String youMustEnterTheQuestion = "youMustEnterTheQuestion";
+  static String categories = "categories";
+  static String manageCategories = "manageCategories";
 
 
   static String thereIsNoOptionsFound = "There is no options found";

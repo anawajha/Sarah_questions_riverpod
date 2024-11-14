@@ -10,5 +10,8 @@ class Constants {
   final String englishLangCode = 'en';
   final String arabicLangCode = 'ar';
 
+  final String categoriesCollection = 'Categories';
+  final String questionsCollection = 'Questions';
+
   final String urlUserPlaceholder = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT4uVTJhuKhJh6BHreiEga4rQLSmDATuUrtg&usqp=CAU';
 }

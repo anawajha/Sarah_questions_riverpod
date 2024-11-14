@@ -33,7 +33,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   24.spaceY,
                   LabeledTextField(
-                    controller: logic.tecUsername,
+                    controller: logic.tecEmail,
                     label: TransManager.emailAddress.tr,
                     hint: TransManager.emailAddress.tr,
                     prefixIcon: const Icon(Iconsax.profile_tick5),
