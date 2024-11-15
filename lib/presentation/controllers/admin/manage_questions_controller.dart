@@ -34,12 +34,12 @@ class ManageQuestionsController extends MainController {
     }
   }
 
-  Stream<QuerySnapshot<Map<String, dynamic>>> getCategories() => firestore
+  Stream<QuerySnapshot<Map<String, dynamic>>> getQuestions() => firestore
       .collection(Constants().questionsCollection)
       .orderBy('created_at', descending: true)
       .snapshots();
 
-  Stream<QuerySnapshot<Map<String, dynamic>>> getCategoriesById(String id) =>
+  Stream<QuerySnapshot<Map<String, dynamic>>> getQuestionsById(String id) =>
       firestore
           .collection(Constants().questionsCollection)
           .where('category_id', isEqualTo: id)

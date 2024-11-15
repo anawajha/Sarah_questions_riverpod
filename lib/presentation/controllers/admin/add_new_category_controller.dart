@@ -9,10 +9,12 @@ import 'package:sarahah_questions/presentation/controllers/main_controller.dart'
 
 class AddNewCategoryController extends MainController {
 
-    final formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
   final tecCategoryName = TextEditingController();
 
-  Future<void> addNewQuestion () async {
+  Future<void> addNewCategory () async {
+    if (formKey.currentState!.validate()) {
+      
     showProgress();
      await firestore.collection(Constants().categoriesCollection).add({
             'name': tecCategoryName.text.trim(), 
@@ -21,11 +23,13 @@ class AddNewCategoryController extends MainController {
           })
           .then((value) {
             hideProgress();
+            Get.back();
             AppUtils().snackSuccess(body: TransManager.questionAddedSuccessfully.tr);
           })
           .catchError((error){
             AppUtils().snackError(body: error);
             hideProgress();
           });
+  }
   }
 }

@@ -15,6 +15,7 @@ class AppSmallIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       shape: CircleBorder(),
+      clipBehavior: Clip.antiAlias,
        child: InkWell(onTap: onTap, radius: 100,
     borderRadius: double.infinity.radius, child: Padding(
       padding: 4.padding,

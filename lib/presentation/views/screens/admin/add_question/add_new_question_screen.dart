@@ -46,7 +46,7 @@ class AddNewQuestionScreen extends StatelessWidget {
                     ),
                     80.spaceY,
                     ElevatedButton(
-                        onPressed: () => logic.addNewQuestion,
+                        onPressed: () async => await logic.addNewQuestion(),
                         child: Text(TransManager.add.tr)),
                   ],
                 ),

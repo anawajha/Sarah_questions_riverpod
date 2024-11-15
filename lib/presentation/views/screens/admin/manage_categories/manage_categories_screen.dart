@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
 import 'package:sarahah_questions/app/localization/trans_manager.dart';
+import 'package:sarahah_questions/app/router/routes.dart';
 import 'package:sarahah_questions/domain/entities/category.dart';
 import 'package:sarahah_questions/presentation/controllers/admin/manage_categories_controller.dart';
 import 'package:sarahah_questions/presentation/views/screens/admin/manage_categories/widgets/admin_category_item.dart';
@@ -33,6 +34,18 @@ class ManageCategoriesScreen extends StatelessWidget {
                 child: Text(TransManager.thereIsNoOptionsFound.tr),
               );
             });
+      }),
+      floatingActionButton:
+          GetBuilder<ManageCategoriesController>(builder: (logic) {
+        return AnimatedContainer(
+          duration: Duration(milliseconds: 500),
+          child: FloatingActionButton.extended(
+              isExtended: logic.isExtended,
+              backgroundColor: Theme.of(context).colorScheme.primary,
+              onPressed: () => Get.toNamed(Routes.addNewCategory),
+              label: Text(TransManager.addNew.tr),
+              icon: Icon(Icons.add)),
+        );
       }),
     );
   }

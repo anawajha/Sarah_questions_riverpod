@@ -12,4 +12,5 @@ class Routes {
   static const String manageQuestions = '/manage_questions';
   static const String manageCategories = '/manage_categories';
   static const String questions = '/questions';
+  static const String statistics = '/statistics';
 }

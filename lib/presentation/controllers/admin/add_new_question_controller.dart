@@ -9,7 +9,6 @@ import 'package:sarahah_questions/domain/entities/category.dart';
 import 'package:sarahah_questions/presentation/controllers/main_controller.dart';
 
 class AddNewQuestionController extends MainController {
-  final firestore = FirebaseFirestore.instance;
 
   final formKey = GlobalKey<FormState>();
   final tecQuestion = TextEditingController();
@@ -27,7 +26,7 @@ class AddNewQuestionController extends MainController {
 
   Future<void> _getCategories() async {
     startLoading();
-    firestore.collection(Constants().questionsCollection).orderBy('created_at', descending: true).get().then((data){
+    firestore.collection(Constants().categoriesCollection).orderBy('created_at', descending: true).get().then((data){
       data.docs.forEach((cat) => categories.add( Category.fromSnapshot(cat)));
       stopLoading();
     }).catchError((e){
@@ -39,7 +38,7 @@ class AddNewQuestionController extends MainController {
   Future<void> addNewQuestion () async {
     if(formKey.currentState!.validate()){
     showProgress();
-     await firestore.collection('Questions').add({
+     await firestore.collection(Constants().questionsCollection).add({
             'category_id': selectedCategory, 
             'question_text': tecQuestion.text.trim(), 
             'author_id': FirebaseAuth.instance.currentUser?.uid,
@@ -47,6 +46,7 @@ class AddNewQuestionController extends MainController {
           })
           .then((value) {
             hideProgress();
+            Get.back();
             AppUtils().snackSuccess(body: '');
           })
           .catchError((error){

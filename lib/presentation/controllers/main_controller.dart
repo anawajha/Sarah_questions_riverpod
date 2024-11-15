@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:sarahah_questions/app/services/storage/local_storage.dart';
 import 'package:sarahah_questions/app/utils/my_get_utils.dart';
@@ -10,6 +11,7 @@ class MainController extends GetxController {
   bool progressLoading = false;
 
   final firestore = FirebaseFirestore.instance;
+  final auth = FirebaseAuth.instance;
 
   void startLoading() {
     isLoading = true;

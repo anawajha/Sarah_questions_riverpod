@@ -28,6 +28,10 @@ abstract class TransManager {
   static String errorWhileDeletingCategory = "errorWhileDeletingCategory";
   static String questionDeletedSuccessfully = "questionDeletedSuccessfully";
   static String errorWhileDeletingQuestion = "errorWhileDeletingQuestion";
+  static String statistics = "statistics";
+  static String loggedOut = "LoggedOut";
+  static String delete = "delete";
+  static String edit = "edit";
 
 
   static String thereIsNoOptionsFound = "There is no options found";

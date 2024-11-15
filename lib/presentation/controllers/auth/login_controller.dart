@@ -45,8 +45,8 @@ class LoginController extends MainController {
     email: tecEmail.text,
     password: tecPassword.text
   );
-
-    Get.offAllNamed(Routes.manageQuestions);
+    MyGetUtils().findService(LocalStorageService()).rememberMe = true;
+    Get.offAllNamed(Routes.statistics);
     cleanLogin();
   
 } on FirebaseAuthException catch (e) {

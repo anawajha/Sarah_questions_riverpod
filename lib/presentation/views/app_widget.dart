@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sarahah_questions/app/utils/my_get_utils.dart';
+import 'package:sarahah_questions/presentation/controllers/main_controller.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -32,9 +33,10 @@ class AppWidget extends StatelessWidget {
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate
         ],
-        // initialBinding: BindingsBuilder(() {
-        //       Get.put(MainController() , permanent: true);
-        //     }),
+        
+        initialBinding: BindingsBuilder(() {
+              Get.put(MainController() , permanent: true);
+            }),
       )
     );
   }

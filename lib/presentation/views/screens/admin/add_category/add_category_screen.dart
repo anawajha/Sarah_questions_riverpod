@@ -30,7 +30,7 @@ class AddNewCategoryScreen extends StatelessWidget {
                         validator: (t) => t.toString().trim().isNotEmpty ? null : TransManager.youMustEnterCategoryName.tr),
                     80.spaceY,
                     ElevatedButton(
-                        onPressed: ()=> logic.addNewQuestion, child: Text(TransManager.add.tr)),
+                        onPressed: () async => await logic.addNewCategory(), child: Text(TransManager.add.tr)),
                   ],
                 ),
           )),

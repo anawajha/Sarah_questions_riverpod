@@ -32,36 +32,7 @@ class AppDrawer extends StatelessWidget {
             title: Text(TransManager.home.tr),
             onTap: (){},
           ),
-          if(auth.FirebaseAuth.instance.currentUser != null)... [
-            ListTile(
-            leading: Icon(Iconsax.profile_tick5),
-            title: Text(TransManager.editProfile.tr),
-            onTap: (){},
-          ),
-            ListTile(
-            leading: Icon(Iconsax.category5),
-            title: Text(TransManager.categories.tr),
-            onTap: (){
-              Get.back();
-              Get.toNamed(Routes.addNewQuestion);
-            },
-          ),
-            ListTile(
-            leading: Icon(Iconsax.message_question5),
-            title: Text(TransManager.questions.tr),
-            onTap: (){
-              Get.back();
-              Get.toNamed(Routes.manageQuestions);
-            },
-          ),
-            ListTile(
-            iconColor: Theme.of(context).colorScheme.error,
-            textColor: Theme.of(context).colorScheme.error,
-            leading: Icon(Iconsax.login),
-            title: Text(TransManager.logout.tr),
-            onTap: (){},
-          ),
-          ] else ...[
+          
           ListTile(
             leading: Icon(Iconsax.call5),
             title: Text(TransManager.contactUs.tr),
@@ -86,7 +57,6 @@ class AppDrawer extends StatelessWidget {
             title: Text(TransManager.adminLogin.tr),
             onTap: ()=> Get.toNamed(Routes.login),
           ),
-          ]
         ],
     );
   }
