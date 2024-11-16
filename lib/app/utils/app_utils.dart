@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:sarahah_questions/app/config/constance.dart';
 import 'package:sarahah_questions/app/theme/color_manager.dart';
 import 'package:flutter/material.dart';
@@ -48,4 +50,14 @@ class AppUtils{
         .buffer
         .asUint8List();
   }
+
+  Color getRandomColor() {
+  final Random random = Random();
+  return Color.fromARGB(
+    255,
+    random.nextInt(256), // Red (0-255)
+    random.nextInt(256), // Green (0-255)
+    random.nextInt(256), // Blue (0-255)
+  );
+}
 }

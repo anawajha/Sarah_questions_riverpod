@@ -35,6 +35,7 @@ class AdminDrawer extends StatelessWidget {
               ),
             ),
             ListTile(
+              selected: true,
               leading: Icon(Iconsax.home5),
               title: Text(TransManager.home.tr),
               onTap: () {},

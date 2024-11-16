@@ -41,22 +41,17 @@ class LoginController extends MainController {
   Future<void> _preformLogin() async {
     try {
       showProgress();
-   await FirebaseAuth.instance.signInWithEmailAndPassword(
-    email: tecEmail.text,
-    password: tecPassword.text
-  );
-    MyGetUtils().findService(LocalStorageService()).rememberMe = true;
-    Get.offAllNamed(Routes.statistics);
-    cleanLogin();
-  
-} on FirebaseAuthException catch (e) {
-  Logger().e(e.message);
-    hideProgress();
-    AppUtils().snackError(body: TransManager.wrongEmailOrPassword.tr);
-
-}
-
-}
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: tecEmail.text, password: tecPassword.text);
+      lss.rememberMe = true;
+      Get.offAllNamed(Routes.statistics);
+      cleanLogin();
+    } on FirebaseAuthException catch (e) {
+      Logger().e(e.message);
+      hideProgress();
+      AppUtils().snackError(body: TransManager.wrongEmailOrPassword.tr);
+    }
+  }
 
   void cleanLogin() {
     tecEmail.clear();

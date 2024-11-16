@@ -32,6 +32,11 @@ abstract class TransManager {
   static String loggedOut = "LoggedOut";
   static String delete = "delete";
   static String edit = "edit";
+  static String deleteCategory = "deleteCategory";
+  static String whenDeletingThisCategoryAllQuestionsThatsLinkedToItWillBeRemoved = "whenDeletingThisCategoryAllQuestionsThatsLinkedToItWillBeRemoved";
+  static String deleteQuestion = "deleteQuestion";
+  static String areYouSureYouWantToDeleteThisQuestion = "areYouSureYouWantToDeleteThisQuestion";
+  static String copiedToClipboard = "copiedToClipboard";
 
 
   static String thereIsNoOptionsFound = "There is no options found";
