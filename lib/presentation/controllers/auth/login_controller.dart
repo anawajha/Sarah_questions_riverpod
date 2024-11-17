@@ -16,12 +16,6 @@ class LoginController extends MainController {
   final localService = MyGetUtils().findService(LocalStorageService());
 
   bool visiblePassword = true;
-  bool rememberMe = true;
-
-  void changeRememberMeStatus() {
-    rememberMe = !rememberMe;
-    update();
-  }
 
   void changePasswordVisibility() {
     visiblePassword = !visiblePassword;
@@ -57,6 +51,5 @@ class LoginController extends MainController {
     tecEmail.clear();
     tecPassword.clear();
     visiblePassword = false;
-    rememberMe = true;
   }
 }

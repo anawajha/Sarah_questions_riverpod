@@ -21,8 +21,10 @@ class AddNewQuestionScreen extends StatelessWidget {
       body: GetBuilder<AddNewQuestionController>(
           initState: (logic) {
             if (Get.arguments != null) {
-              
-             logic.controller?.changeSelectedCategory( Category.fromJson(Get.arguments).id) ;
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                logic.controller?.changeSelectedCategory(
+                    Category.fromJson(Get.arguments).id);
+              });
             }
           },
           builder: (logic) => Form(

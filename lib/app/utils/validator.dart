@@ -38,35 +38,9 @@ class Validator {
     return null;
   }
 
-  // id Id validator must more than 9 digits
-  String? idValidator(String? value) {
-    if (emptyValidator(value) != null) {
-      return emptyValidator(value);
-    } else if (value!.length != 10) {
-      return TransManager.pleaseEnterValidId.tr;
-    } else if (!RegExp(r'^[0-9]+$').hasMatch(value)) {
-      return TransManager.pleaseEnterValidId.tr;
-    }
-    return null;
-  }
 
-  String? validateDateBirth(String? text) {
-    if (emptyValidator(text) != null) {
-      return emptyValidator(text);
-    } else if (DateTime.parse(text!).isAfter(DateTime.now())) {
-      return TransManager.pleaseEnterValidDateOfBirth.tr;
-    }
-    return null;
-  }
 
-  String? validateName(String? text) {
-    if (emptyValidator(text) != null) {
-      return emptyValidator(text);
-    } else if (text!.length < 2) {
-      return TransManager.pleaseEnterValidName.tr;
-    }
-    return null;
-  }
+
 
   String? validateEmail(String? text) {
     if (emptyValidator(text) != null) {
@@ -77,14 +51,6 @@ class Validator {
     return null;
   }
 
-  String? validateMobile(String? text) {
-    if (emptyValidator(text) != null) {
-      return emptyValidator(text);
-    } else if (!GetUtils.isPhoneNumber(text ?? '')) {
-      return TransManager.pleaseEnterValidMobile.tr;
-    }
-    return null;
-  }
 
   String? fileValidator(String? p0) {
     if (emptyValidator(p0) != null) {
@@ -113,41 +79,4 @@ class Validator {
     return hasMatch(s, r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$');
   }
 
-  String? phoneValidator(String? value) {
-    if (emptyValidator(value) != null) {
-      return emptyValidator(value);
-    } else if (!isPhoneNumber(value ?? '')) {
-      return TransManager.pleaseEnterValidMobile.tr;
-    }
-    return null;
-  }
-
-  String? nameValidator(String? value) {
-    if (emptyValidator(value) != null) {
-      return emptyValidator(value);
-    } else if (value!.length < 2) {
-      return TransManager.pleaseEnterValidName.tr;
-    }
-    return null;
-  }
-
-  String? emailOrMobileValidator(String? p1) {
-    if (emptyValidator(p1) != null) {
-      return emptyValidator(p1);
-    } else if (!GetUtils.isEmail(p1 ?? '') &&
-        !GetUtils.isPhoneNumber(p1 ?? '')) {
-      return TransManager.pleaseEnterValidEmailOrMobile.tr;
-    }
-    return null;
-  }
-
-  String? youtubeLink(String? p1) {
-    if (emptyValidator(p1) != null) {
-      return null;
-    } else if (!GetUtils.isURL(p1 ?? '') &&
-        (!(p1 ?? '').contains('youtu.be'))) {
-      return TransManager.pleaseEnterValidLink.tr;
-    }
-    return null;
-  }
 }

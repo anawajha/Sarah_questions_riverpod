@@ -12,6 +12,8 @@ import 'package:sarahah_questions/presentation/views/screens/app/home/home_scree
 import 'package:sarahah_questions/presentation/views/screens/app/questions/questions_screen.dart';
 import 'package:sarahah_questions/presentation/views/screens/auth/login/login_screen.dart';
 import 'package:sarahah_questions/presentation/views/screens/general/about_us/about_us_screen.dart';
+import 'package:sarahah_questions/presentation/views/screens/general/contact_us/contact_us_screen.dart';
+import 'package:sarahah_questions/presentation/views/screens/general/privacy_policy/privacy_policy_screen.dart';
 import 'package:sarahah_questions/presentation/views/screens/splash/splash_screen.dart';
 
 class AppRouter {
@@ -58,6 +60,14 @@ class AppRouter {
     GetPage(
       name: Routes.aboutUs,
       page: () => const AboutUsScreen(),
+    ),
+    GetPage(
+      name: Routes.privacyPolicy,
+      page: () => const PrivacyPolicyScreen(),
+    ),
+    GetPage(
+      name: Routes.contactUs,
+      page: () => const ContactUsScreen(),
     ),
     GetPage(
       name: Routes.questions,

@@ -6,6 +6,7 @@ import 'package:sarahah_questions/app/config/constance.dart';
 import 'package:sarahah_questions/app/localization/trans_manager.dart';
 import 'package:sarahah_questions/app/utils/app_utils.dart';
 import 'package:sarahah_questions/presentation/controllers/main_controller.dart';
+import 'package:sarahah_questions/presentation/views/widgets/app_alert_dialog.dart';
 
 class ManageQuestionsController extends MainController {
   late ScrollController scrollController;
@@ -37,7 +38,8 @@ class ManageQuestionsController extends MainController {
   Stream<QuerySnapshot<Map<String, dynamic>>> getQuestions({String? catId}) =>
       catId != null
           ? firestore
-              .collection(Constants().questionsCollection).where('category_id', isEqualTo: catId)
+              .collection(Constants().questionsCollection)
+              .where('category_id', isEqualTo: catId)
               .orderBy('created_at', descending: true)
               .snapshots()
           : firestore
@@ -52,7 +54,8 @@ class ManageQuestionsController extends MainController {
           .orderBy('created_at', descending: true)
           .snapshots();
 
-  Future<void> deleteCategory(String quesId) async {
+  Future<void> _performDeleteQuestion(String quesId) async {
+    showProgress();
     firestore
         .collection(Constants().questionsCollection)
         .doc(quesId)
@@ -61,6 +64,20 @@ class ManageQuestionsController extends MainController {
             .snackError(body: TransManager.questionDeletedSuccessfully.tr))
         .catchError((e) => AppUtils()
             .snackError(body: TransManager.errorWhileDeletingQuestion.tr));
+            update();
+    hideProgress();
+  }
+
+  void deleteQuestion({required String questionId}) {
+    Get.dialog(AppAlertDialog(
+        title: TransManager.areYouSureYouWantToDeleteThisQuestion.tr,
+        positiveButtonText: TransManager.delete.tr,
+        positiveButtonOnPressed: () async {
+          Get.back();
+          await _performDeleteQuestion(questionId);
+        },
+        negativeButtonText: TransManager.cancel.tr,
+        negativeButtonOnPressed: () => Get.back()));
   }
 
   @override

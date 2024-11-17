@@ -36,12 +36,15 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Iconsax.call5),
             title: Text(TransManager.contactUs.tr),
-            onTap: (){},
+            onTap: ()=> Get.toNamed(Routes.contactUs),
           ),
             ListTile(
             leading: Icon(Iconsax.shield_tick5),
             title: Text(TransManager.privacyPolicy.tr),
-            onTap: (){},
+            onTap: (){
+              Get.back();
+              Get.toNamed(Routes.privacyPolicy);
+            },
           ),  ListTile(
             leading: Icon(Iconsax.star5),
             title: Text(TransManager.rateUs.tr),
@@ -55,7 +58,10 @@ class AppDrawer extends StatelessWidget {
            ListTile(
             leading: Icon(Iconsax.profile_tick5),
             title: Text(TransManager.adminLogin.tr),
-            onTap: ()=> Get.toNamed(Routes.login),
+            onTap: (){
+              Get.back();
+              Get.toNamed(Routes.login);
+            },
           ),
         ],
     );

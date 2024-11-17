@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:sarahah_questions/app/config/constance.dart';
-import 'package:sarahah_questions/app/theme/color_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -27,18 +26,18 @@ class AppUtils{
         duration: const Duration(seconds: 2),
         borderRadius: 10,
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        messageText: Text(body, maxLines: 2, style: TextStyle(color: ColorManager().background),),
+        messageText: Text(body, maxLines: 2, style: TextStyle(color: Colors.white),),
       ),
     );
   }
 
 
   snackSuccess({String? title, required String body}) {
-    mainSnack(body: body, backgroundColor: ColorManager().success);
+    mainSnack(body: body, backgroundColor: Colors.green);
   }
 
   snackError({String? title, required String body}) {
-    mainSnack(body: body, backgroundColor: ColorManager().error);
+    mainSnack(body: body, backgroundColor: Colors.red);
   }
 
   Future<Uint8List> getBytesFromAsset(String path, num width) async {

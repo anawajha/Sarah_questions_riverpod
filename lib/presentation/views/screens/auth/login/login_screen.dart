@@ -39,7 +39,7 @@ class LoginScreen extends StatelessWidget {
                     prefixIcon: const Icon(Iconsax.profile_tick5),
                     inputAction: TextInputAction.next,
                     inputType: TextInputType.emailAddress,
-                    validator: Validator.instance.validateName,
+                    validator: (t) => Validator.instance.validateEmail(t),
                   ),
                   20.spaceY,
                   LabeledTextField(

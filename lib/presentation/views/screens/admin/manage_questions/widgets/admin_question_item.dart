@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
 import 'package:sarahah_questions/app/localization/trans_manager.dart';
 import 'package:sarahah_questions/app/router/routes.dart';
+import 'package:sarahah_questions/app/utils/my_get_utils.dart';
 import 'package:sarahah_questions/domain/entities/question.dart';
+import 'package:sarahah_questions/presentation/controllers/admin/manage_questions_controller.dart';
 import 'package:sarahah_questions/presentation/views/widgets/app_pop_ip_menu_button.dart';
 
 class AdminQuestionItem extends StatelessWidget {
@@ -50,7 +52,9 @@ class AdminQuestionItem extends StatelessWidget {
                       .textTheme
                       .labelMedium
                       ?.copyWith(color: Theme.of(context).colorScheme.error)),
-              onTap: () {},
+              onTap: (){
+                MyGetUtils().find<ManageQuestionsController>(ManageQuestionsController()).deleteQuestion(questionId: question.id);
+              },
             )
           ]),
         ),
