@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
 import 'package:sarahah_questions/app/localization/trans_manager.dart';
 import 'package:sarahah_questions/app/router/routes.dart';
+import 'package:sarahah_questions/domain/entities/category.dart';
 import 'package:sarahah_questions/domain/entities/question.dart';
 import 'package:sarahah_questions/presentation/controllers/admin/manage_questions_controller.dart';
 import 'package:sarahah_questions/presentation/views/screens/admin/manage_questions/widgets/admin_question_item.dart';
@@ -14,10 +15,15 @@ class ManageQuestionsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(TransManager.questions.tr)),
+      appBar: AppBar(
+          title: Text(Get.arguments != null
+              ? Category.fromJson(Get.arguments).name
+              : TransManager.questions.tr)),
       body: GetBuilder<ManageQuestionsController>(builder: (logic) {
         return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-            stream: logic.getQuestions(),
+            stream: Get.arguments != null
+                ? logic.getQuestions(catId: Category.fromJson(Get.arguments).id)
+                : logic.getQuestions(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Center(child: CircularProgressIndicator.adaptive());
@@ -42,7 +48,8 @@ class ManageQuestionsScreen extends StatelessWidget {
           child: FloatingActionButton.extended(
               isExtended: logic.isExtended,
               backgroundColor: Theme.of(context).colorScheme.primary,
-              onPressed: () => Get.toNamed(Routes.addNewQuestion),
+              onPressed: () =>
+                  Get.toNamed(Routes.addNewQuestion, arguments: Get.arguments),
               label: Text(TransManager.addNew.tr),
               icon: Icon(Icons.add)),
         );

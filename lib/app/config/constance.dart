@@ -16,5 +16,5 @@ class Constants {
   final String whatsappUrl = "whatsapp://send?text=";
   final String whatsappUrl2 = "https://wa.me/?text=";
 
-  final String urlUserPlaceholder = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT4uVTJhuKhJh6BHreiEga4rQLSmDATuUrtg&usqp=CAU';
+  final String urlUserPlaceholder = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwbYMnoBKydOk2tezl6c1A1g1nQgC_8JXckA&s';
 }

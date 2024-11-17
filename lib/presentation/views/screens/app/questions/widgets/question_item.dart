@@ -29,7 +29,7 @@ class QuestionItem extends StatelessWidget {
               width: 0.5,
               color: Theme.of(context).colorScheme.primaryContainer)),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(question.text,

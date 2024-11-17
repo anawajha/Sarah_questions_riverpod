@@ -32,6 +32,6 @@ class SplashScreen extends StatelessWidget {
     await Future.delayed(
         const Duration(seconds: 3),
         () => Get.offNamed( Routes.home));
-        () => Get.offNamed((FirebaseAuth.instance.currentUser != null || MyGetUtils().findService(LocalStorageService()).rememberMe) ? Routes.statistics : Routes.home);
+        () => Get.offNamed((MyGetUtils().findService(LocalStorageService()).rememberMe || FirebaseAuth.instance.currentUser != null) ? Routes.statistics : Routes.home);
   }
 }
