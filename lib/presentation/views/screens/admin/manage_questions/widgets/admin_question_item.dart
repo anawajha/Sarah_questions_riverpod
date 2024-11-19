@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
 import 'package:sarahah_questions/app/localization/trans_manager.dart';
-import 'package:sarahah_questions/app/router/routes.dart';
 import 'package:sarahah_questions/app/utils/my_get_utils.dart';
 import 'package:sarahah_questions/domain/entities/question.dart';
 import 'package:sarahah_questions/presentation/controllers/admin/manage_questions_controller.dart';
@@ -40,12 +39,12 @@ class AdminQuestionItem extends StatelessWidget {
         Align(
           alignment: AlignmentDirectional.topStart,
           child: AppPopupMenuButton(items: [
-            PopupMenuItem(
-              child: Text(TransManager.edit.tr,
-                  style: Theme.of(context).textTheme.labelMedium),
-              onTap: () => Get.toNamed(Routes.addNewQuestion,
-                  parameters: {"question_id": question.id}),
-            ),
+            // PopupMenuItem(
+            //   child: Text(TransManager.edit.tr,
+            //       style: Theme.of(context).textTheme.labelMedium),
+            //   onTap: () => Get.toNamed(Routes.addNewQuestion,
+            //       parameters: {"question_id": question.id}),
+            // ),
             PopupMenuItem(
               child: Text(TransManager.delete.tr,
                   style: Theme.of(context)

@@ -31,10 +31,6 @@ class StatisticsController extends MainController {
   final drawerItems = [
     DrawerItemModel(icon: Iconsax.home5, onTap: () {}, text: TransManager.home),
     DrawerItemModel(
-        icon: Iconsax.profile_tick5,
-        onTap: () {},
-        text: TransManager.editProfile),
-    DrawerItemModel(
         icon: Iconsax.category5,
         onTap: () {
           Get.back();

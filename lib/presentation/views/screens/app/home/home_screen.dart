@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
             builder: (logic) {
               return AnimatedContainer(
                 duration: Duration(milliseconds: 700),
-                child: IconButton(onPressed: logic.changeTheme, icon: Icon(Get.isDarkMode ? Iconsax.sun_15 : Iconsax.moon)));
+                child: IconButton(onPressed: logic.changeTheme, icon: Icon(!Get.isDarkMode ? Iconsax.sun_15 : Iconsax.moon)));
             }
           )]),
       body: GetBuilder<HomeController>(builder: (logic) {
