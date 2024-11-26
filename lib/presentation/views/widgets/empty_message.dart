@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EmptyMessage extends StatelessWidget {
   const EmptyMessage({super.key, required this.message, this.icon, this.withImage = true, this.mainAxisSize = MainAxisSize.max});
@@ -16,8 +15,8 @@ class EmptyMessage extends StatelessWidget {
       mainAxisSize: mainAxisSize,
       children: [
         if(withImage) ... [
-        Icon(icon ?? Icons.assignment_outlined, size: 28.w, color: Theme.of(context).textTheme.bodyMedium?.color,),
-        SizedBox(height: 20.h,),
+        Icon(icon ?? Icons.assignment_outlined, size: 28, color: Theme.of(context).textTheme.bodyMedium?.color,),
+        SizedBox(height: 20,),
         ],
         Text(message, style: Theme.of(context).textTheme.bodyMedium, maxLines: 3,)
       ],

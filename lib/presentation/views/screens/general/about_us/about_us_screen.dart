@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sarahah_questions/app/config/svg_manager.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
@@ -19,11 +18,11 @@ class AboutUsScreen extends StatelessWidget {
         children: [
           const TransparentLogoBackground(),
           SafeArea(child: ListView(
-            padding: EdgeInsets.only(top: 40.h, bottom: 24.h, left: 24.w, right: 24.w),
+            padding: EdgeInsets.only(top: 40, bottom: 24, left: 24, right: 24),
             children: [
-              ImageSvg(SvgManager().logo, height: 60.h, color: Theme.of(context).primaryColor),
+              ImageSvg(SvgManager().logo, height: 60, color: Theme.of(context).primaryColor),
               40.spaceY,
-              Text('هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان و حجم و لون الخط حيث يتم التحكم في هذا النص وامكانية تغييرة في اي وقت عن طريق ادارة الموقع . يتم اضافة هذا النص كنص تجريبي للمعاينة فقط وهو لا يعبر عن أي موضوع محدد انما لتحديد الشكل العام للقسم او الصفحة أو الموقع. هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان و حجم و لون الخط حيث يتم التحكم في هذا النص وامكانية تغييرة في اي وقت عن طريق ادارة الموقع . يتم اضافة هذا النص كنص تجريبي للمعاينة فقط وهو لا يعبر عن أي موضوع محدد انما لتحديد الشكل العام للقسم او الصفحة أو الموقع.', style: Theme.of(context).textTheme.labelLarge?.copyWith(fontSize: 15.sp, height: 1.9))
+              Text('هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان و حجم و لون الخط حيث يتم التحكم في هذا النص وامكانية تغييرة في اي وقت عن طريق ادارة الموقع . يتم اضافة هذا النص كنص تجريبي للمعاينة فقط وهو لا يعبر عن أي موضوع محدد انما لتحديد الشكل العام للقسم او الصفحة أو الموقع. هذا نص تجريبي لاختبار شكل و حجم النصوص و طريقة عرضها في هذا المكان و حجم و لون الخط حيث يتم التحكم في هذا النص وامكانية تغييرة في اي وقت عن طريق ادارة الموقع . يتم اضافة هذا النص كنص تجريبي للمعاينة فقط وهو لا يعبر عن أي موضوع محدد انما لتحديد الشكل العام للقسم او الصفحة أو الموقع.', style: Theme.of(context).textTheme.labelLarge?.copyWith(fontSize: 15, height: 1.9))
             ],
           ))
         ],

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
 
 class ShimmerContentItem extends StatelessWidget {
@@ -19,8 +18,8 @@ class ShimmerContentItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width.w,
-      height: height ?? 14.h,
+      width: width,
+      height: height ?? 14,
       decoration: BoxDecoration(
           borderRadius: (radius ?? 6).radius, color: color ?? Colors.black),
     );

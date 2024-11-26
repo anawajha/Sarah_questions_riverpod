@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:sarahah_questions/app/config/svg_manager.dart';
@@ -25,14 +24,14 @@ class HelpCenterScreen extends StatelessWidget {
                 key: logic.formKey,
                 child: ListView(
                   padding: EdgeInsets.only(
-                      top: 40.h, bottom: 24.h, left: 28.w, right: 28.w),
+                      top: 40, bottom: 24, left: 28, right: 28),
                   children: [
                     ImageSvg(SvgManager().logo,
-                        height: 60.h, color: Theme.of(context).primaryColor),
+                        height: 60, color: Theme.of(context).primaryColor),
                     40.spaceY,
                     Text(TransManager.howCanWeHelpYou.tr,
                         style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                            fontSize: 15.sp,
+                            fontSize: 15,
                             color: Theme.of(context).primaryColor),
                         textAlign: TextAlign.center),
                     Text(
@@ -42,7 +41,7 @@ class HelpCenterScreen extends StatelessWidget {
                         style: Theme.of(context)
                             .textTheme
                             .bodyLarge
-                            ?.copyWith(fontSize: 15.sp),
+                            ?.copyWith(fontSize: 15),
                         textAlign: TextAlign.center),
                     32.spaceY,
                     const Divider(),

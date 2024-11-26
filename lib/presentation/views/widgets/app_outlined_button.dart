@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppOutlinedButton extends StatelessWidget {
   const AppOutlinedButton(
@@ -30,9 +29,9 @@ class AppOutlinedButton extends StatelessWidget {
             width: 1,
           ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(32.r),
+            borderRadius: BorderRadius.circular(32),
           ),
-          minimumSize: Size(double.infinity, 57.h),
+          minimumSize: Size(double.infinity, 57),
           textStyle: (textStyle ?? Theme.of(context).textTheme.labelMedium)
               ?.copyWith(color: color)),
       child: child,

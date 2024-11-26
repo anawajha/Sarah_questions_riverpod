@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 import 'package:sarahah_questions/app/config/constance.dart';
@@ -14,16 +13,16 @@ GetSnackBar AppSnackBar ({required String body, Color? backgroundColor, Color? t
             ? null
             : SvgPicture.asset(
                 icon,
-                width: 20.w,
-                height: 20.h,
+                width: 20,
+                height: 20,
               ),
         backgroundColor: backgroundColor ?? const Color(0xFF303030),
         duration: const Duration(milliseconds: 2500),
-        borderRadius: 20.r,
+        borderRadius: 20,
         margin: EdgeInsets.symmetric(
-            horizontal: 12.w, vertical: 12.h),
+            horizontal: 12, vertical: 12),
         padding: EdgeInsets.symmetric(
-            horizontal: 32.w, vertical: 16.h),
+            horizontal: 32, vertical: 16),
         messageText: Text(
           body,
           maxLines: 2,

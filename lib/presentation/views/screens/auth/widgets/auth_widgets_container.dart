@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
 
 class AuthWidgetsContainer extends StatelessWidget {
@@ -16,7 +15,7 @@ class AuthWidgetsContainer extends StatelessWidget {
       Container(
         padding: EdgeInsets.zero,
         margin: EdgeInsets.zero,
-        height: 435.h,
+        height: 435,
         width: double.infinity,
         color: Theme.of(context).primaryColor,
         child: Stack(
@@ -32,7 +31,7 @@ class AuthWidgetsContainer extends StatelessWidget {
           ],
         ),
       ),
-      ListView(padding: EdgeInsets.symmetric(horizontal: 24.w),
+      ListView(padding: EdgeInsets.symmetric(horizontal: 24),
        children: [
         // padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 331.h, bottom: 122.h),
         331.spaceY,
@@ -44,7 +43,7 @@ class AuthWidgetsContainer extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.only(
-                top: 24.h, left: 34.w, right: 34.w, bottom: 48.h),
+                top: 24, left: 34, right: 34, bottom: 48),
             children: children,
           ),
         ),

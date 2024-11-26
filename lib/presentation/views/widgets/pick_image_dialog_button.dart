@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
 
@@ -27,7 +26,7 @@ class PickImageDialogButton extends StatelessWidget {
             children: [
               Icon(
                 icon,
-                size: 40.w,
+                size: 40,
                 color: Theme.of(context).colorScheme.onSurface,
               ),
               12.spaceY,

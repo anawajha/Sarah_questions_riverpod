@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class AppLongRichText extends StatelessWidget {
@@ -29,7 +28,7 @@ class AppLongRichText extends StatelessWidget {
           style: style ?? Theme.of(context)
                           .textTheme
                           .labelLarge!.copyWith(
-                              fontSize: 15.sp),
+                              fontSize: 15),
           children: List.generate(
               strings.length,
               (index) => (index == 0
@@ -41,7 +40,7 @@ class AppLongRichText extends StatelessWidget {
                           .textTheme
                           .labelLarge)!.copyWith(
                               color: Theme.of(context).primaryColor,
-                              fontSize: 15.sp),
+                              fontSize: 15),
                           recognizer: TapGestureRecognizer()..onTap = onPressed)
                       : TextSpan(text: strings[index].tr, style: style))))),
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Clickable extends StatelessWidget {
   const Clickable(
@@ -14,7 +13,7 @@ class Clickable extends StatelessWidget {
     return InkWell(
       // overlayColor: MaterialStateProperty.all<Color?>(color ??
       //     Theme.of(context).colorScheme.primaryContainer.withOpacity(0.7)),
-      borderRadius: BorderRadius.circular(radius?.r ?? 12.r),
+      borderRadius: BorderRadius.circular(radius ?? 12),
       onTap: onClilc,
       child: child,
     );

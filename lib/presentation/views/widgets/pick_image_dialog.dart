@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:image_picker/image_picker.dart';
@@ -16,7 +15,7 @@ class PickImageDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      insetPadding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+      insetPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
       child: Padding(
           padding: 20.padding,
           child: Column(

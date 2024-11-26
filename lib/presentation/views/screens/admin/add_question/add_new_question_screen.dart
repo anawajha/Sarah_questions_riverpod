@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
@@ -31,7 +30,7 @@ class AddNewQuestionScreen extends StatelessWidget {
                 key: logic.formKey,
                 child: ListView(
                   padding:
-                      EdgeInsets.symmetric(horizontal: 20.w, vertical: 80.h),
+                      EdgeInsets.symmetric(horizontal: 20, vertical: 80),
                   children: [
                     LabeledTextField(
                       label: TransManager.questionText.tr,

@@ -1,8 +1,6 @@
 import 'dart:math';
 
-import 'package:sarahah_questions/app/config/constance.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'dart:ui' as ui;
 import 'package:flutter/services.dart';
@@ -13,10 +11,10 @@ class AppUtils{
   AppUtils._internal();
   factory AppUtils() => _instance;
 
-  screenUtil(BuildContext context) {
-    ScreenUtil.init(context,
-        minTextAdapt: true, designSize: Constants().designSize);
-  }
+  // screenUtil(BuildContext context) {
+  //   ScreenUtil.init(context,
+  //       minTextAdapt: true, designSize: Constants().designSize);
+  // }
 
 
   mainSnack({String? title, required String body, Color? backgroundColor}) {

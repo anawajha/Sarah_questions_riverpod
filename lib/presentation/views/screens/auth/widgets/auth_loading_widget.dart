@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
@@ -17,7 +16,7 @@ class AuthLoadingWidget extends StatelessWidget {
         children: [
           Icon(
             Iconsax.security_safe,
-            size: 86.w,
+            size: 86,
             color: Theme.of(context).primaryColor,
           ),
           9.spaceY,
@@ -26,7 +25,7 @@ class AuthLoadingWidget extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .labelMedium
-                ?.copyWith(fontSize: 15.sp),
+                ?.copyWith(fontSize: 15),
           )
         ],
       ),

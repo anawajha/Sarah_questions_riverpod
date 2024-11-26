@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
 import 'package:sarahah_questions/app/localization/trans_manager.dart';
@@ -41,7 +40,7 @@ class DropDownLabeledTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsetsDirectional.only(start: 20.w),
+          padding: EdgeInsetsDirectional.only(start: 20),
           child: Text(
             label,
             style: Theme.of(context).textTheme.labelMedium,

@@ -1,4 +1,3 @@
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
 import 'package:sarahah_questions/app/theme/color_manager.dart';
 import 'package:sarahah_questions/app/theme/components/text_manager.dart';
@@ -18,7 +17,7 @@ factory AppButtonTheme()=> _instance;
         shape: RoundedRectangleBorder(
           borderRadius: 30.radius
         ),
-        minimumSize: Size(double.infinity, 52.h),
+        minimumSize: Size(double.infinity, 52),
         textStyle: TextManager().labelLarge.copyWith(fontWeight: FontWeight.w700, color: ColorManager().onPrimary)
       ),);
 
@@ -32,7 +31,7 @@ factory AppButtonTheme()=> _instance;
         shape: RoundedRectangleBorder(
           borderRadius: 30.radius
         ),
-        minimumSize: Size(double.infinity, 52.h),
+        minimumSize: Size(double.infinity, 52),
         textStyle: TextManager().labelLarge
       ),);
 
@@ -42,9 +41,9 @@ factory AppButtonTheme()=> _instance;
         shape: RoundedRectangleBorder(
           borderRadius: 8.radius
         ),
-        padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 4.h),
-        minimumSize: Size(20.w, 30.h),
-        maximumSize: Size(double.infinity, 52.h),
-        textStyle: TextManager().labelSmall.copyWith(fontSize: 11.sp, color: ColorManager().onPrimary)
+        padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+        minimumSize: Size(20, 30),
+        maximumSize: Size(double.infinity, 52),
+        textStyle: TextManager().labelSmall.copyWith(fontSize: 11, color: ColorManager().onPrimary)
       ),);
 }

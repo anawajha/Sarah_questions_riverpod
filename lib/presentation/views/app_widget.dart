@@ -4,7 +4,6 @@ import 'package:sarahah_questions/app/router/router.dart';
 import 'package:sarahah_questions/app/services/storage/local_storage.dart';
 import 'package:sarahah_questions/app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sarahah_questions/app/utils/my_get_utils.dart';
 import 'package:sarahah_questions/presentation/controllers/main_controller.dart';
@@ -14,10 +13,7 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      // useInheritedMediaQuery: true,
-      // minTextAdapt: true,
-      builder: (context, widget) => GetMaterialApp(
+    return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         smartManagement: SmartManagement.keepFactory,
         // home: const SplashScreen(),
@@ -37,7 +33,6 @@ class AppWidget extends StatelessWidget {
         initialBinding: BindingsBuilder(() {
               Get.put(MainController() , permanent: true);
             }),
-      )
     );
   }
 }

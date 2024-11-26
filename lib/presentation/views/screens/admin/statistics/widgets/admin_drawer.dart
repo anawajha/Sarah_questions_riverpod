@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
 import 'package:sarahah_questions/app/localization/trans_manager.dart';
+import 'package:sarahah_questions/app/router/routes.dart';
 import 'package:sarahah_questions/presentation/controllers/admin/statistics_controller.dart';
 import 'package:sarahah_questions/presentation/views/widgets/app_image_network.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
@@ -28,22 +29,35 @@ class AdminDrawer extends StatelessWidget {
               ],
             ),
           ),
-          ...List.generate(
-            logic.drawerItems.length,
-            (index) => index < logic.drawerItems.length -1
-                ? ListTile(
-                    leading: Icon(logic.drawerItems[index].icon),
-                    title: Text(logic.drawerItems[index].text.tr),
-                    onTap: logic.drawerItems[index].onTap,
-                  )
-                : ListTile(
-                    iconColor: Theme.of(context).colorScheme.error,
-                    textColor: Theme.of(context).colorScheme.error,
-                    leading: Icon(Iconsax.login),
-                    title: Text(TransManager.logout.tr),
-                    onTap: logic.logout,
-                  ),
-          )
+          ListTile(
+            selected: true,
+            leading: Icon(Iconsax.home5),
+            title: Text(TransManager.home.tr),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: Icon(Iconsax.category5),
+            title: Text(TransManager.categories.tr),
+            onTap: () {
+              Get.back();
+              Get.toNamed(Routes.manageCategories);
+            },
+          ),
+          ListTile(
+            leading: Icon(Iconsax.message_question5),
+            title: Text(TransManager.questions.tr),
+            onTap: () {
+              Get.back();
+              Get.toNamed(Routes.manageQuestions);
+            },
+          ),
+          ListTile(
+            iconColor: Theme.of(context).colorScheme.error,
+            textColor: Theme.of(context).colorScheme.error,
+            leading: Icon(Iconsax.login),
+            title: Text(TransManager.logout.tr),
+            onTap: logic.logout,
+          ),
         ],
       );
     });

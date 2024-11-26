@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
 
 class SecondaryButton extends StatelessWidget {
@@ -17,19 +16,19 @@ class SecondaryButton extends StatelessWidget {
     return icon != null ? ElevatedButton.icon(onPressed: onPressed, icon: icon!, label: child ?? const SizedBox(), style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(borderRadius: radius.radius),
         backgroundColor: color ?? Theme.of(context).colorScheme.secondary,
-        textStyle: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: fontSize.sp, color: Theme.of(context).colorScheme.onPrimary, fontWeight: FontWeight.w500),
+        textStyle: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: fontSize, color: Theme.of(context).colorScheme.onPrimary, fontWeight: FontWeight.w500),
         padding: padding ?? 8.padding,
-        minimumSize: Size(20.w, 10.h),
-        maximumSize: Size(double.infinity, 52.h)
+        minimumSize: Size(20, 10),
+        maximumSize: Size(double.infinity, 52)
       ),) : ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(borderRadius: radius.radius),
         backgroundColor: color ?? Theme.of(context).colorScheme.secondary,
-        textStyle: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: fontSize.sp, color: Theme.of(context).colorScheme.onPrimary, fontWeight: FontWeight.w500),
+        textStyle: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: fontSize, color: Theme.of(context).colorScheme.onPrimary, fontWeight: FontWeight.w500),
         padding: padding ?? 8.padding,
-        minimumSize: Size(20.w, 10.h),
-        maximumSize: Size(double.infinity, 52.h)
+        minimumSize: Size(20, 10),
+        maximumSize: Size(double.infinity, 52)
       ),
       child: child,
     );

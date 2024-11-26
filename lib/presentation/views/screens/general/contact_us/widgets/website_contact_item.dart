@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:sarahah_questions/app/config/constance.dart';
@@ -40,7 +39,7 @@ class WebsiteContactItem extends StatelessWidget {
                         style: Theme.of(context)
                             .textTheme
                             .labelMedium
-                            ?.copyWith(fontSize: 15.sp),
+                            ?.copyWith(fontSize: 15),
                         textDirection: TextDirection.ltr,
                         textAlign:
                             Directionality.of(context) == TextDirection.ltr

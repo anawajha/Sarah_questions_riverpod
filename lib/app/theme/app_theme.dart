@@ -1,4 +1,3 @@
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sarahah_questions/app/config/constance.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
 import 'package:sarahah_questions/app/theme/color_manager.dart';
@@ -45,11 +44,11 @@ class AppTheme {
         elevation: 50,
         type: BottomNavigationBarType.fixed,
         selectedIconTheme: IconThemeData(
-          size: 24.w,
+          size: 24,
           color: ColorManager().primary
         ),
         unselectedIconTheme: IconThemeData(
-        size: 24.w,
+        size: 24,
         color: ColorManager().outlineVariant
         )
       ),
@@ -110,11 +109,11 @@ class AppTheme {
         type: BottomNavigationBarType.fixed,
         elevation: 50,
         selectedIconTheme: IconThemeData(
-          size: 24.w,
+          size: 24,
           color: ColorManager().primary
         ),
         unselectedIconTheme: IconThemeData(
-        size: 24.w
+        size: 24
         )
       ),
       dividerTheme: const DividerThemeData(space: 0, thickness: 0.5),

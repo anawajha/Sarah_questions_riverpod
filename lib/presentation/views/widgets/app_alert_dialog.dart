@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppAlertDialog extends StatelessWidget {
   const AppAlertDialog({required this.title,
@@ -19,10 +18,10 @@ class AppAlertDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      insetPadding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
-      titlePadding: EdgeInsets.only(top: 16.h, bottom: 5.h, left: 20.w, right: 20.w),
-      actionsPadding: EdgeInsets.only(bottom: 5.h, left: 12.w, right: 12.w),
-      contentPadding: EdgeInsets.only(top: 18.h, bottom: 5.h, left: 20.w, right: 20.w),
+      insetPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+      titlePadding: EdgeInsets.only(top: 16, bottom: 5, left: 20, right: 20),
+      actionsPadding: EdgeInsets.only(bottom: 5, left: 12, right: 12),
+      contentPadding: EdgeInsets.only(top: 18, bottom: 5, left: 20, right: 20),
       actionsAlignment: MainAxisAlignment.start,
       title: Text(
         title,
@@ -32,7 +31,7 @@ class AppAlertDialog extends StatelessWidget {
       ),
       content: body == null ? null : Text(
         body!,
-        style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 15.sp),
+        style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontSize: 15),
         maxLines: 5
       ),
       actions: [
