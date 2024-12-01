@@ -1,6 +1,7 @@
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:sarahah_questions/app/config/constance.dart';
 import 'package:sarahah_questions/app/localization/trans_manager.dart';
 import 'package:sarahah_questions/app/router/routes.dart';
 import 'package:sarahah_questions/app/services/storage/local_storage.dart';
@@ -47,4 +48,16 @@ class StatisticsController extends MainController {
     DrawerItemModel(
         icon: Iconsax.login, onTap: () {}, text: TransManager.logout),
   ];
+
+  Stream<AggregateQuerySnapshot> getCategoriesCount() => firestore
+      .collection(Constants().categoriesCollection)
+      .count()
+      .get()
+      .asStream();
+
+  Stream<AggregateQuerySnapshot> getQuestionsCount() => firestore
+      .collection(Constants().questionsCollection)
+      .count()
+      .get()
+      .asStream();
 }
