@@ -14,9 +14,11 @@ class QuestionItem extends StatelessWidget {
   const QuestionItem({
     super.key,
     required this.question,
+    required this.textSize,
   });
 
   final Question question;
+  final double textSize;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class QuestionItem extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(question.text,
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: textSize),
               textAlign: TextAlign.center),
           16.spaceY,
           Row(

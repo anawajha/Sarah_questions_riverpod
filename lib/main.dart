@@ -10,6 +10,7 @@ void main() async {
   await Firebase.initializeApp();
   // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   // NotificationManager.instance.init();
+
   runApp(const AppWidget());
 }
 

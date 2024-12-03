@@ -26,7 +26,7 @@ class StatisticsScreen extends StatelessWidget {
                 text: TransManager.questions,
                 stream: logic.getQuestionsCount()),
             StatisticItem(
-                iconPath: GifManager().questions,
+                iconPath: GifManager().categories,
                 text: TransManager.categories,
                 stream: logic.getCategoriesCount())
           ],

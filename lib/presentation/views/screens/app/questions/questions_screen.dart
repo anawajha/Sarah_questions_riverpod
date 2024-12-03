@@ -14,7 +14,14 @@ class QuestionsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(Category.fromJson(Get.arguments).name),),
+      appBar:
+          AppBar(title: Text(Category.fromJson(Get.arguments).name), actions: [
+        GetBuilder<QuestionsController>(builder: (logic) {
+          return IconButton(
+              onPressed: logic.toggleTextSizeControllability,
+              icon: Icon(Icons.text_fields_rounded));
+        })
+      ]),
       body: GetBuilder<QuestionsController>(builder: (logic) {
         return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
             stream: logic.getQuestions(Category.fromJson(Get.arguments).id),
@@ -25,6 +32,7 @@ class QuestionsScreen extends StatelessWidget {
                 return ListView.separated(
                     padding: 20.padding,
                     itemBuilder: (context, index) => QuestionItem(
+                        textSize: logic.defaultTextSize,
                         question:
                             Question.fromSnapshot(snapshot.data!.docs[index])),
                     separatorBuilder: (context, index) => 12.spaceY,
