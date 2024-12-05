@@ -125,5 +125,9 @@ We hope you read these terms carefully and comply with them while using the Sara
 Make sure to include the contact information for your support team in the actual text of the terms and conditions.
 
 """,
+        TransManager.controllTextSize: "Controll text size",
+        TransManager.category: "Categories",
+        TransManager.question: "Question",
+
       };
 }

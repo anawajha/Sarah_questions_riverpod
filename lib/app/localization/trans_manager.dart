@@ -90,5 +90,7 @@ abstract class TransManager {
   static String website = "website";
   static String privacyPolicyContent = "privacyPolicyContent";
   static String controllTextSize = "controllTextSize";
+  static String category = "category";
+  static String question = "question";
 
 }

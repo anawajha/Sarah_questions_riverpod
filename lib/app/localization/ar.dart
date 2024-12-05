@@ -52,8 +52,8 @@ class Ar {
         TransManager.youMustSelectCategory: "يجب اختيار فئة",
         TransManager.youMustEnterCategoryName: "يجب إدخال اسم الفئة",
         TransManager.youMustEnterTheQuestion: "يجب إدخال السؤال",
-        TransManager.categories: "الفئات",
-        TransManager.manageCategories: "إدارة الفئات",
+        TransManager.categories: "التصنيفات",
+        TransManager.manageCategories: "إدارة التصنيفات",
         TransManager.categoryDeletedSuccessfully: "تم حذف الفئة بنجاح",
         TransManager.errorWhileDeletingCategory: "حدث خطأ أثناء حذف التصنيف",
         TransManager.questionDeletedSuccessfully: "تم حذف السؤال بنجاح",
@@ -97,5 +97,8 @@ class Ar {
 نأمل منك قراءة هذه البنود بعناية والامتثال لها أثناء استخدام تطبيق أسئلة صراحة. إذا كنت غير موافق على هذه البنود، فيرجى عدم استخدام التطبيق.
 تاكد من تضمين معلومات الاتصال الخاصة بفريق الدعم الخاص بك في النص الفعلي لبنود وشروط الاستخدام.
  """,
+        TransManager.controllTextSize: "تحكّم بحجم النص",
+        TransManager.category: "تصنيف",
+        TransManager.question: "سؤال",
       };
 }

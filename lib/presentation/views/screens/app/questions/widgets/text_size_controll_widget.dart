@@ -11,11 +11,13 @@ class TextSizeControllWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<QuestionsController>(builder: (logic) {
       return AnimatedContainer(
+        height: logic.textSizeControllability ? null : 0,
         duration: Duration(milliseconds: 900),
         curve: logic.textSizeControllability
             ? Curves.linearToEaseOut
             : Curves.easeInToLinear,
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Text(TransManager.controllTextSize.tr),
             12.spaceY,
