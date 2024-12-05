@@ -8,7 +8,6 @@ import 'package:sarahah_questions/presentation/controllers/auth/login_controller
 import 'package:sarahah_questions/presentation/controllers/general/help_center_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/home/home_controller.dart';
 import 'package:sarahah_questions/presentation/controllers/home/questions_controller.dart';
-import 'package:sarahah_questions/presentation/controllers/settings/settings_controller.dart';
 
 
 
@@ -32,13 +31,6 @@ class HelpCenterBinding implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut(()=> HelpCenterController());
-  }
-}
-
-class SettingsBinding implements Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut(()=> SettingsController());
   }
 }
 

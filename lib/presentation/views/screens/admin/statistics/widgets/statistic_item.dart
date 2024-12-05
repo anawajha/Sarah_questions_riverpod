@@ -34,19 +34,18 @@ class StatisticItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.asset(
-                iconPath,
-                width: 60,
-                height: 60,
-              ),
+              Image.asset(iconPath, width: 60, height: 60),
               12.spaceY,
               StreamBuilder<AggregateQuerySnapshot>(
                   stream: stream,
                   builder: (context, snapshot) {
-                    return Text(
-                      '${snapshot.hasData ? snapshot.data!.count : 0} ${text.tr}',
-                      style: Theme.of(context).textTheme.titleLarge,
-                    );
+                    return snapshot.connectionState == ConnectionState.waiting
+                        ? Transform.scale(
+                            scale: 0.5, child: CircularProgressIndicator())
+                        : Text(
+                            '${snapshot.hasData ? snapshot.data!.count : 0} ${text.tr}',
+                            style: Theme.of(context).textTheme.titleLarge,
+                          );
                   }),
             ],
           ),

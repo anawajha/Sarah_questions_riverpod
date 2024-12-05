@@ -12,6 +12,7 @@ class Constants {
 
   final String categoriesCollection = 'Categories';
   final String questionsCollection = 'Questions';
+  final String appStatusCollection = 'AppStatus';
 
   final String whatsappUrl = "whatsapp://send?text=";
   final String whatsappUrl2 = "https://wa.me/?text=";

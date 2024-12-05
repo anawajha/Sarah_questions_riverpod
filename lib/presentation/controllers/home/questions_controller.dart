@@ -15,12 +15,18 @@ class QuestionsController extends MainController {
     super.onInit();
   }
 
-  void getQuestions(String categoryId) {
-    questions = firestore
-        .collection(Constants().questionsCollection)
-        .where('category_id', isEqualTo: categoryId)
-        .orderBy('created_at', descending: true)
-        .snapshots();
+  void getQuestions(String? categoryId) {
+    questions = categoryId != null
+        ? firestore
+            .collection(Constants().questionsCollection)
+            .where('category_id', isEqualTo: categoryId)
+            .orderBy('created_at', descending: true)
+            .snapshots()
+        : firestore
+            .collection(Constants().questionsCollection)
+            .where('category_id', isEqualTo: categoryId)
+            .orderBy('created_at', descending: true)
+            .snapshots();
   }
 
   void chnageTextSize(size) {

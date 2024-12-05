@@ -8,6 +8,7 @@ import 'package:sarahah_questions/presentation/views/screens/admin/add_question/
 import 'package:sarahah_questions/presentation/views/screens/admin/manage_categories/manage_categories_screen.dart';
 import 'package:sarahah_questions/presentation/views/screens/admin/manage_questions/manage_questions_screen.dart';
 import 'package:sarahah_questions/presentation/views/screens/admin/statistics/statistics_screen.dart';
+import 'package:sarahah_questions/presentation/views/screens/app/categories/categories_screen.dart';
 import 'package:sarahah_questions/presentation/views/screens/app/home/home_screen.dart';
 import 'package:sarahah_questions/presentation/views/screens/app/questions/questions_screen.dart';
 import 'package:sarahah_questions/presentation/views/screens/auth/login/login_screen.dart';
@@ -78,6 +79,10 @@ class AppRouter {
       name: Routes.statistics,
       page: () => const StatisticsScreen(),
       binding: StatisticsBinding()
+    ),
+    GetPage(
+      name: Routes.categories,
+      page: () => const CategoriesScreen(),
     ),
   ];
 }

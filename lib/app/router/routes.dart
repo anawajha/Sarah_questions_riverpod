@@ -15,4 +15,5 @@ class Routes {
   static const String questions = '/questions';
   static const String statistics = '/statistics';
   static const String privacyPolicy = '/privacy_policy';
+  static const String categories = '/categories';
 }
