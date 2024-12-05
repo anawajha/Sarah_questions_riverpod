@@ -2,6 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sarahah_questions/app/extensions/num.dart';
+import 'package:sarahah_questions/presentation/views/widgets/loading_shimmer/shimmer.dart';
+import 'package:sarahah_questions/presentation/views/widgets/loading_shimmer/shimmer_content_item.dart';
+import 'package:sarahah_questions/presentation/views/widgets/loading_shimmer/shimmer_loading.dart';
 
 class StatisticItem extends StatelessWidget {
   const StatisticItem(
@@ -40,8 +43,13 @@ class StatisticItem extends StatelessWidget {
                   stream: stream,
                   builder: (context, snapshot) {
                     return snapshot.connectionState == ConnectionState.waiting
-                        ? Transform.scale(
-                            scale: 0.5, child: CircularProgressIndicator())
+                        ? Shimmer(
+                            child: ShimmerLoading(
+                                child: ShimmerContentItem(
+                            width: Get.width / 4,
+                            height: 10,
+                            radius: 2,
+                          )))
                         : Text(
                             '${snapshot.hasData ? snapshot.data!.count : 0} ${text.tr}',
                             style: Theme.of(context).textTheme.titleLarge,

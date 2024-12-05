@@ -11,7 +11,7 @@ class QuestionsController extends MainController {
 
   @override
   void onInit() {
-    getQuestions(Category.fromJson(Get.arguments).id);
+    getQuestions(Get.arguments != null ? Category.fromJson(Get.arguments).id : null);
     super.onInit();
   }
 

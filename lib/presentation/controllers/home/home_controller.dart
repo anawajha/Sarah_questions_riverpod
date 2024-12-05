@@ -46,7 +46,7 @@ class HomeController extends MainController {
   void getAppStatus() {
     firestore.collection(Constants().appStatusCollection).get().then((res) {
       final data = res.docs.first.data();
-      if (!data['can_run_app']) {
+      if (!(data['can_run_app'])) {
         Get.dialog(
             AppAlertDialog(
                 title: data['title'],

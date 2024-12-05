@@ -7,7 +7,9 @@ import 'package:sarahah_questions/domain/entities/category.dart';
 import 'package:sarahah_questions/domain/entities/question.dart';
 import 'package:sarahah_questions/presentation/controllers/home/questions_controller.dart';
 import 'package:sarahah_questions/presentation/views/screens/app/questions/widgets/question_item.dart';
+import 'package:sarahah_questions/presentation/views/screens/app/questions/widgets/question_shimmer.dart';
 import 'package:sarahah_questions/presentation/views/screens/app/questions/widgets/text_size_controll_widget.dart';
+import 'package:sarahah_questions/presentation/views/widgets/loading_shimmer/shimmer.dart';
 
 class QuestionsScreen extends StatelessWidget {
   const QuestionsScreen({super.key});
@@ -16,9 +18,8 @@ class QuestionsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(title: Text(Category.fromJson(Get.arguments).name), actions: [
-        GetBuilder<QuestionsController>(
-            builder: (logic) {
+          AppBar(title: Text(Get.arguments != null ? Category.fromJson(Get.arguments).name : TransManager.questions.tr), actions: [
+        GetBuilder<QuestionsController>(builder: (logic) {
           return IconButton(
               onPressed: logic.toggleTextSizeControllability,
               icon: Icon(Icons.text_fields_rounded));
@@ -29,7 +30,17 @@ class QuestionsScreen extends StatelessWidget {
             stream: logic.questions,
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(child: CircularProgressIndicator.adaptive());
+                return Shimmer(
+                  child: ListView.separated(
+                      physics: const NeverScrollableScrollPhysics(),
+                      padding: 20.padding,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) =>
+                          QuestionShimmer(textSize: logic.defaultTextSize),
+                      separatorBuilder: (context, index) => 12.spaceY,
+                      itemCount: 5),
+                );
+                // return Center(child: CircularProgressIndicator.adaptive());
               } else if (snapshot.hasData && snapshot.data!.docs.isNotEmpty) {
                 return ListView(
                   shrinkWrap: true,
