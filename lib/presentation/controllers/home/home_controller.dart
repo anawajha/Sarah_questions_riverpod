@@ -63,9 +63,8 @@ class HomeController extends MainController {
   void _exitApp() {
     Get.dialog(
         AppAlertDialog(
-            title: 'تنبيه هام',
-            body:
-                'عذرًا، لا يمكنك استخدام التطبيق حتى تقوم بإتمام عملية الدفع. يُرجى تسديد الرسوم للاستمرار في استخدام التطبيق.',
+            title: 'الاتصال مقطوع',
+            body: 'أنت غير متصل بالإنترنت، الرجاء الإتصال والمحاولة مرة أُخرى.',
             positiveButtonText: 'حسناً',
             positiveButtonOnPressed: () => SystemNavigator.pop()),
         barrierDismissible: true);
