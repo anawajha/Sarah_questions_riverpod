@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                 text: TransManager.questions,
                 stream: logic.questionsCount),
             StatisticItem(
-                onClick: () => Get.toNamed(Routes.questions, arguments: null),
+                onClick: () => Get.toNamed(Routes.categories, arguments: null),
                 iconPath: GifManager().categories,
                 text: TransManager.categories,
                 stream: logic.categoriesCount)

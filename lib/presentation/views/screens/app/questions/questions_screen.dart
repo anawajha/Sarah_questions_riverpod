@@ -17,14 +17,17 @@ class QuestionsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          AppBar(title: Text(Get.arguments != null ? Category.fromJson(Get.arguments).name : TransManager.questions.tr), actions: [
-        GetBuilder<QuestionsController>(builder: (logic) {
-          return IconButton(
-              onPressed: logic.toggleTextSizeControllability,
-              icon: Icon(Icons.text_fields_rounded));
-        })
-      ]),
+      appBar: AppBar(
+          title: Text(Get.arguments != null
+              ? Category.fromJson(Get.arguments).name
+              : TransManager.questions.tr),
+          actions: [
+            GetBuilder<QuestionsController>(builder: (logic) {
+              return IconButton(
+                  onPressed: logic.toggleTextSizeControllability,
+                  icon: Icon(Icons.text_fields_rounded));
+            })
+          ]),
       body: GetBuilder<QuestionsController>(builder: (logic) {
         return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
             stream: logic.questions,
