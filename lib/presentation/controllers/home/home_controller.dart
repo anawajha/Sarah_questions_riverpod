@@ -15,7 +15,7 @@ class HomeController extends MainController {
   void onInit() {
     questionsCount = getQuestionsCount();
     categoriesCount = getCategoriesCount();
-    getAppStatus();
+    // getAppStatus();
     super.onInit();
   }
 
