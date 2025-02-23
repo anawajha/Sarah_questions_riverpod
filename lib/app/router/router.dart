@@ -12,7 +12,6 @@ import 'package:sarahah_questions/presentation/views/screens/app/categories/cate
 import 'package:sarahah_questions/presentation/views/screens/app/home/home_screen.dart';
 import 'package:sarahah_questions/presentation/views/screens/app/questions/questions_screen.dart';
 import 'package:sarahah_questions/presentation/views/screens/auth/login/login_screen.dart';
-import 'package:sarahah_questions/presentation/views/screens/general/about_us/about_us_screen.dart';
 import 'package:sarahah_questions/presentation/views/screens/general/contact_us/contact_us_screen.dart';
 import 'package:sarahah_questions/presentation/views/screens/general/privacy_policy/privacy_policy_screen.dart';
 import 'package:sarahah_questions/presentation/views/screens/splash/splash_screen.dart';
@@ -57,10 +56,6 @@ class AppRouter {
       name: Routes.addNewQuestion,
       page: () => const AddNewQuestionScreen(),
       binding: AddNewQuestionBinding()
-    ),
-    GetPage(
-      name: Routes.aboutUs,
-      page: () => const AboutUsScreen(),
     ),
     GetPage(
       name: Routes.privacyPolicy,

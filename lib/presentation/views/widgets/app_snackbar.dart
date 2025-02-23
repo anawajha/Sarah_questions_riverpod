@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 import 'package:sarahah_questions/app/config/constance.dart';
 import 'package:sarahah_questions/app/theme/color_manager.dart';
@@ -9,13 +8,6 @@ GetSnackBar AppSnackBar ({required String body, Color? backgroundColor, Color? t
    
     return GetSnackBar(
         snackPosition: SnackPosition.TOP,
-        icon: icon == null
-            ? null
-            : SvgPicture.asset(
-                icon,
-                width: 20,
-                height: 20,
-              ),
         backgroundColor: backgroundColor ?? const Color(0xFF303030),
         duration: const Duration(milliseconds: 2500),
         borderRadius: 20,
